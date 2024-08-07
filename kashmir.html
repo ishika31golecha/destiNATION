@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Explore Kashmir</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+    
+            h1 {
+                text-align: center;
+            }
+    
+            #activities-form {
+                width: 300px;
+                padding: 20px;
+                font-size: 16px;
+                margin: 0 auto;
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+    
+            input[type="checkbox"] {
+                margin-right: 5px;
+            }
+            #map {
+            height: 400px;
+            width: 100%;
+        }
+        </style>
+    </head>
+
+    <body>
+        <section class="ladakh-heading">
+            <div class="ladakh-heading-header">
+                <h1>KASHMIR - <i>Paradise on Earth</i></h1>
+            </div>
+        </section>
+
+        <section class="Goa-info">
+                <div class="Goa-form">
+                <form action="kashmir.php" method="post">
+                    <div class="Goa-form-a">
+                        <div class="inputBox">
+                            <label for="startdt">Journey begins on
+                            <input type="date" name="startdt" required></label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="enddt">Journey ends on
+                            <input type="date" name="enddt" required></label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="members">No. of Members
+                            <input type="number" name="members" required></label>
+                        </div>
+                    </div>
+
+                    <div class="Goa-form-b">
+                        <div class="inputBox">
+                            <label for="kashmiraccomodation">Accommodation
+                            <select id="hotel-dropdown"  name="kashmiraccomodation" required >
+                                    <option value="" disabled selected>Select a Hotel</option>
+                                    <option value="dal-lake-resort">Dal Lake Resort</option>
+                                    <option value="gulmarg-retreat">Gulmarg Retreat</option>
+                                <option value="pahalgam-luxury-inn">Pahalgam Luxury Inn</option>
+                                <option value="shrinagar-palace">Srinagar Palace Hotel</option>
+                                <option value="sonamarg-view">Sonamarg Mountain View Hotel</option>
+                            </select></label>
+                        </div>
+                    
+                        <div class="inputBox">
+                            <label for="transport">Choose a Mode of Transport
+                                <select id="transport-dropdown"  name="transport" required >
+                                    <option value="" disabled selected>Select a Mode of Transport</option>
+                                    <option value="">Airways</option>
+                                    <option value="">Roadways</option>
+                                    <option value="">Railways</option>
+                                </select></label>
+                                
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="kashmirtourist">Want a Tourist Guide
+                            <select id="transport-dropdown"  name="kashmirtourist" required >
+                                    <option value="" disabled selected>Yes or No</option>
+                                    <option value="">Yes</option>
+                                    <option value="">No</option>
+                            </select></label>
+                        </div>
+                    </div>
+
+
+                    <div class="attraction-form">
+                        <h3>Places to Visit</h3>
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="dal-lake">Dal Lake
+                            </label>
+                            <label>
+                                <input type="checkbox" name="gulmarg">Gulmarg
+                            </label>
+                            <label>
+                                <input type="checkbox" name="pahalgam">Pahalgam
+                            </label>
+                            <label>
+                                <input type="checkbox" name="shalimar-bagh">Shalimar Bagh
+                            </label>
+                            <label>
+                                <input type="checkbox" name="sonamarg">Sonamarg
+                            </label>
+                            <label>
+                                <input type="checkbox" name="shankaracharya-temple">Shankaracharya Temple
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="wular-lake">Wular Lake
+                            </label>
+                            <label>
+                                <input type="checkbox" name="jama-masjid">Jama Masjid
+                            </label>
+                            <label>
+                                <input type="checkbox" name="nigeen-lake">Nigeen Lake
+                            </label>
+                            <label>
+                                <input type="checkbox" name="awantipora-ruins">Awantipora Ruins
+                            </label>
+                            <label>
+                                <input type="checkbox" name="mughal-road">Mughal Road
+                            </label>
+                            <label>
+                                <input type="checkbox" name="betaab-valley">Betaab Valley
+                            </label>
+                        </div>
+                    </div>
+
+       
+                    <div class="activity-form">
+                        <h3>Activities to Enjoy</h3>
+                        <div class="row">
+                        <label>
+                            <input type="checkbox" name="shikara-ride"> Shikara Ride on Dal Lake
+                        </label>
+                        <label>
+                            <input type="checkbox" name="skiing"> Skiing in Gulmarg
+                        </label>
+                        <label>
+                            <input type="checkbox" name="trekking"> Trekking in Pahalgam
+                        </label>
+                        <label>
+                            <input type="checkbox" name="golf"> Golf in Srinagar
+                        </label>
+                        <label>
+                            <input type="checkbox" name="river-rafting"> River Rafting in Lidder River
+                        </label>
+                        <label>
+                            <input type="checkbox" name="fishing"> Fishing in Wular Lake
+                        </label>
+                        </div>
+
+                        <div class="row">
+                        <label>
+                            <input type="checkbox" name="horse-riding"> Horse Riding in Sonamarg
+                        </label>
+                        <label>
+                            <input type="checkbox" name="paragliding"> Paragliding in Bir-Billing
+                        </label>
+                        <label>
+                            <input type="checkbox" name="shopping"> Shopping in Lal Chowk
+                        </label>
+                        <label>
+                            <input type="checkbox" name="cultural-events"> Cultural Events and Festivals
+                        </label>
+                        <label>
+                            <input type="checkbox" name="gondola-ride"> Gondola Ride in Gulmarg
+                        </label>
+                        <label>
+                            <input type="checkbox" name="photography"> Photography in Betaab Valley
+                        </label>
+                        </div>
+                    </div>
+                            
+
+                    <input type="submit" class="Goa-btn" value="Save" name="submit">
+                </form>
+                </div>
+        </section>
+
+        
+        <div class="g-heading">
+            <h3>Famous Places in Kashmir Map</h3></div>
+        
+            <div id="map"></div>
+        
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            <script>
+                var map = L.map('map').setView([34.0836, 74.7973], 8); // Kashmir's coordinates and initial zoom level
+        
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+        
+                // Add markers for famous places in Kashmir
+                var places = [
+                    { name: "Dal Lake", location: [34.0836, 74.7973] },
+                    { name: "Gulmarg", location: [34.0484, 74.3890] },
+                    { name: "Pahalgam", location: [34.0146, 75.3250] },
+                    { name: "Shalimar Bagh", location: [34.0814, 74.8001] },
+                    { name: "Sonamarg", location: [34.3100, 75.5277] },
+                    { name: "Shankaracharya Temple", location: [34.0912, 74.7983] },
+                    { name: "Wular Lake", location: [34.3338, 74.2664] },
+                    { name: "Jama Masjid", location: [34.0745, 74.8159] },
+                    { name: "Nigeen Lake", location: [34.0820, 74.8365] },
+                    { name: "Awantipora Ruins", location: [33.9321, 75.0158] },
+                    { name: "Mughal Road", location: [33.6604, 74.8292] },
+                    { name: "Betaab Valley", location: [33.9418, 75.0147] },
+                ];
+        
+                places.forEach(function (place) {
+                    L.marker(place.location).addTo(map)
+                        .bindPopup(place.name);
+                });
+            </script>
+        
+        
+
+
+
+        <!--------- footer---------->
+        <section class="footer">
+            <h4>More About Us</h4>
+            <p>For more updates visit our social media handles.</p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <p>Made with <i class="fa fa-heart-o"></i> by M3 group Vishwakarma Institute of Technology.</p>
+        </section>
+    </body>
+</html>

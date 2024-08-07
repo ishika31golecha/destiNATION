@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Explore Kerala</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+    
+            h1 {
+                text-align: center;
+            }
+    
+            #activities-form {
+                width: 300px;
+                padding: 20px;
+                font-size: 16px;
+                margin: 0 auto;
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+    
+            input[type="checkbox"] {
+                margin-right: 5px;
+            }
+            #map {
+            height: 400px;
+            width: 100%;
+        }
+        </style>
+    </head>
+
+    <body>
+        <section class="Goa-heading">
+            <div class="Goa-heading-header">
+                <h1>KERALA - <i>God's Own Country</i></h1>
+            </div>
+        </section>
+
+        <section class="Goa-info">
+                <div class="Goa-form">
+                <form action="kerela.php" method="post">
+                    <div class="Goa-form-a">
+                        <div class="inputBox">
+                            <label for="startdt">Journey begins on
+                            <input type="date" name="startdt" required></label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="enddt">Journey ends on
+                            <input type="date" name="enddt" required></label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="members">No. of Members
+                            <input type="number" name="members" required></label>
+                        </div>
+                    </div>
+
+                    <div class="Goa-form-b">
+                        <div class="inputBox">
+                            <label for="keralaaccomodation">Accommodation
+                            <select id="hotel-dropdown"  name="keralaaccomodation" required >
+                                    <option value="" disabled selected>Select a Hotel</option>
+                                    <option value="munnar-resort">Munnar Mountain Resort</option>
+                                    <option value="alleppey-houseboat">Alleppey Houseboat Retreat</option>
+                                    <option value="kochi-luxury">Kochi Luxury Suites</option>
+                                    <option value="thiruvananthapuram-beach-resort">Thiruvananthapuram Beach Resort</option>
+                            </select></label>
+                        </div>
+                    
+                        <div class="inputBox">
+                            <label for="transport">Choose a Mode of Transport
+                                <select id="transport-dropdown"  name="transport" required >
+                                    <option value="" disabled selected>Select a Mode of Transport</option>
+                                    <option value="">Airways</option>
+                                    <option value="">Roadways</option>
+                                    <option value="">Railways</option>
+                                </select></label>
+                                
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="keralatourist">Want a Tourist Guide
+                            <select id="transport-dropdown"  name="keralatourist" required >
+                                    <option value="" disabled selected>Yes or No</option>
+                                    <option value="">Yes</option>
+                                    <option value="">No</option>
+                            </select></label>
+                        </div>
+                    </div>
+
+
+                    <div class="attraction-form">
+                        <h3>Places to Visit</h3>
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="munnar">Munnar
+                            </label>
+                            <label>
+                                <input type="checkbox" name="alleppey">Alleppey
+                            </label>
+                            <label>
+                                <input type="checkbox" name="kochi">Kochi
+                            </label>
+                            <label>
+                                <input type="checkbox" name="thiruvananthapuram">Thiruvananthapuram
+                            </label>
+                            <label>
+                                <input type="checkbox" name="wayanad">Wayanad
+                            </label>
+                            <label>
+                                <input type="checkbox" name="kovalam">Kovalam
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="varkala">Varkala
+                            </label>
+                            <label>
+                                <input type="checkbox" name="thekkady">Thekkady
+                            </label>
+                            <label>
+                                <input type="checkbox" name="kozhikode">Kozhikode
+                            </label>
+                            <label>
+                                <input type="checkbox" name="poovar">Poovar
+                            </label>
+                            <label>
+                                <input type="checkbox" name="kumarakom">Kumarakom
+                            </label>
+                            <label>
+                                <input type="checkbox" name="kasaragod">Kasaragod
+                            </label>
+                        </div>
+                    </div>
+
+       
+                    <div class="activity-form">
+                        <h3>Activities to Enjoy</h3>
+                        <div class="row">
+                        <label>
+                            <input type="checkbox" name="backwater-cruise"> Backwater Cruise in Alleppey
+                        </label>
+                        <label>
+                            <input type="checkbox" name="tea-plantation-visit"> Tea Plantation Visit in Munnar
+                        </label>
+                        <label>
+                            <input type="checkbox" name="kathakali-performance"> Kathakali Performance in Kochi
+                        </label>
+                        <label>
+                            <input type="checkbox" name="beach-relaxation"> Beach Relaxation in Kovalam
+                        </label>
+                        <label>
+                            <input type="checkbox" name="wildlife-safari"> Wildlife Safari in Thekkady
+                        </label>
+                        <label>
+                            <input type="checkbox" name="houseboat-stay"> Houseboat Stay in Kumarakom
+                        </label>
+                        </div>
+
+                        <div class="row">
+                        <label>
+                            <input type="checkbox" name="art-gallery"> Visit Art Galleries in Thiruvananthapuram
+                        </label>
+                        <label>
+                            <input type="checkbox" name="ayurvedic-treatment"> Ayurvedic Treatment in Wayanad
+                        </label>
+                        <label>
+                            <input type="checkbox" name="beach-activities"> Beach Activities in Varkala
+                        </label>
+                        <label>
+                            <input type="checkbox" name="historical-sites"> Visit Historical Sites in Kozhikode
+                        </label>
+                        <label>
+                            <input type="checkbox" name="spa-retreat"> Spa Retreat in Poovar
+                        </label>
+                        <label>
+                            <input type="checkbox" name="fort-exploration"> Fort Exploration in Kasaragod
+                        </label>
+                        </div>
+                    </div>
+                            
+
+                    <input type="submit" class="Goa-btn" value="Save" name="submit">
+                </form>
+                </div>
+        </section>
+
+        
+        <div class="g-heading">
+            <h3>Famous Places in Kerala Map</h3></div>
+        
+            <div id="map"></div>
+        
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            <script>
+                var map = L.map('map').setView([10.8505, 76.2711], 7); // Kerala's coordinates and initial zoom level
+        
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+        
+                // Add markers for famous places in Kerala
+                var places = [
+                    { name: "Munnar", location: [10.0889, 77.0595] },
+                    { name: "Alleppey", location: [9.4981, 76.3388] },
+                    { name: "Kochi", location: [9.9312, 76.2673] },
+                    { name: "Thiruvananthapuram", location: [8.5241, 76.9366] },
+                    { name: "Wayanad", location: [11.6850, 76.1325] },
+                    { name: "Kovalam", location: [8.4021, 76.9782] },
+                    { name: "Varkala", location: [8.7359, 76.7066] },
+                    { name: "Thekkady", location: [9.5360, 77.3927] },
+                    { name: "Kozhikode", location: [11.2588, 75.7804] },
+                    { name: "Poovar", location: [8.3835, 76.9780] },
+                    { name: "Kumarakom", location: [9.5889, 76.5200] },
+                    { name: "Kasaragod", location: [12.4994, 74.9869] },
+                ];
+        
+                places.forEach(function (place) {
+                    L.marker(place.location).addTo(map)
+                        .bindPopup(place.name);
+                });
+            </script>
+        
+        
+
+
+
+        <!--------- footer---------->
+        <section class="footer">
+            <h4>More About Us</h4>
+            <p>For more updates visit our social media handles.</p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <p>Made with <i class="fa fa-heart-o"></i> by M3 group Vishwakarma Institute of Technology.</p>
+        </section>
+    </body>
+</html>

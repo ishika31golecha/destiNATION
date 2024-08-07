@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Discover Gujarat</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+    
+            h1 {
+                text-align: center;
+            }
+    
+            #activities-form {
+                width: 300px;
+                padding: 20px;
+                font-size: 16px;
+                margin: 0 auto;
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+    
+            input[type="checkbox"] {
+                margin-right: 5px;
+            }
+            #map {
+            height: 400px;
+            width: 100%;
+        }
+        </style>
+    </head>
+
+    <body>
+        <section class="ladakh-heading">
+            <div class="ladakh-heading-header">
+                <h1>GUJARAT - <i>Vibrant and Colourful</i></h1>
+            </div>
+        </section>
+
+        <section class="Goa-info">
+                <div class="Goa-form">
+                <form action="gujarat.php" method="post">
+                    <div class="Goa-form-a">
+                        <div class="inputBox">
+                            <label for="startdt">Journey begins on
+                            <input type="date" name="startdt" required></label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="enddt">Journey ends on
+                            <input type="date" name="enddt" required></label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="members">No. of Members
+                            <input type="number" name="members" required></label>
+                        </div>
+                    </div>
+
+                    <div class="Goa-form-b">
+                        <div class="inputBox">
+                            <label for="gujarataccomodation">Accommodation
+                            <select id="hotel-dropdown"  name="gujarataccomodation" required >
+                                    <option value="" disabled selected>Select a Hotel</option>
+                                    <option value="ahmedabad-luxury">Ahmedabad Luxury Suites</option>
+                                    <option value="vadodara-grand-hotel">Vadodara Grand Hotel</option>
+                                    <option value="surat-ocean-view">Surat Ocean View Resort</option>
+                                    <option value="gandhinagar-green-resort">Gandhinagar Green Resort</option>
+                            </select></label>
+                        </div>
+                    
+                        <div class="inputBox">
+                            <label for="transport">Choose a Mode of Transport
+                                <select id="transport-dropdown" name="transport" required >
+                                    <option value="" disabled selected>Select a Mode of Transport</option>
+                                    <option value="airways">Airways</option>
+                                    <option value="roadways">Roadways</option>
+                                    <option value="railways">Railways</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="gujarattourist">Want a Tourist Guide
+                                <select id="tourist-guide-dropdown" name="gujarattourist" required >
+                                    <option value="" disabled selected>Yes or No</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="attraction-form">
+                        <h3>Places to Visit</h3>
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="places[]" value="ahmedabad">Ahmedabad
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="vadodara">Vadodara
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="surat">Surat
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="gandhinagar">Gandhinagar
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="bhuj">Bhuj
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="dwarka">Dwarka
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="places[]" value="jamnagar">Jamnagar
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="rann-of-kutch">Rann of Kutch
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="somnath">Somnath
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="saputara">Saputara
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="diu">Diu
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="porbandar">Porbandar
+                            </label>
+                        </div>
+                    </div>
+
+       
+                    <div class="activity-form">
+                        <h3>Activities to Enjoy</h3>
+                        <div class="row">
+                        <label>
+                            <input type="checkbox" name="activities[]" value="heritage-walk"> Heritage Walk in Ahmedabad
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="art-gallery"> Visit Art Galleries in Vadodara
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="beach-relaxation"> Beach Relaxation in Diu
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]"> Wildlife Safari in Gir National Park
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="rann-festival"> Rann Festival in Kutch
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="temple-tour"> Temple Tour in Dwarka and Somnath
+                        </label>
+                        </div>
+
+                        <div class="row">
+                        <label>
+                            <input type="checkbox" name="activities[]" value="shopping"> Shopping in Law Garden, Ahmedabad
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="crafts-bazaar"> Crafts Bazaar in Bhuj
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="hiking"> Hiking in Saputara Hills
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]"  value="cultural-events"> Cultural Events and Festivals
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="water-sports"> Water Sports in Jamnagar
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="historical-sites"> Visit Historical Sites in Porbandar
+                        </label>
+                        </div>
+                    </div>
+                            
+
+                    <input type="submit" class="Goa-btn" value="Save" value="submit">
+                </form>
+                </div>
+        </section>
+
+        
+        <div class="g-heading">
+            <h3>Famous Places in Gujarat Map</h3></div>
+        
+            <div id="map"></div>
+        
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            <script>
+                var map = L.map('map').setView([22.2587, 71.1924], 7); // Gujarat's coordinates and initial zoom level
+        
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+        
+                // Add markers for famous places in Gujarat
+                var places = [
+                    { name: "Ahmedabad", location: [23.0225, 72.5714] },
+                    { name: "Vadodara", location: [22.3072, 73.1812] },
+                    { name: "Surat", location: [21.1702, 72.8311] },
+                    { name: "Gandhinagar", location: [23.2156, 72.6369] },
+                    { name: "Bhuj", location: [23.2535, 69.6693] },
+                    { name: "Dwarka", location: [22.2394, 68.9678] },
+                    { name: "Jamnagar", location: [22.4707, 70.0577] },
+                    { name: "Rann of Kutch", location: [23.7337, 69.8597] },
+                    { name: "Somnath", location: [20.8575, 70.4057] },
+                    { name: "Saputara", location: [20.5759, 73.7451] },
+                    { name: "Diu", location: [20.7141, 70.9822] },
+                    { name: "Porbandar", location: [21.6417, 69.6293] },
+                ];
+        
+                places.forEach(function (place) {
+                    L.marker(place.location).addTo(map)
+                        .bindPopup(place.name);
+                });
+            </script>
+        
+        
+
+
+
+        <!--------- footer---------->
+        <section class="footer">
+            <h4>More About Us</h4>
+            <p>For more updates visit our social media handles.</p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <p>Made with <i class="fa fa-heart-o"></i> by M3 group Vishwakarma Institute of Technology.</p>
+        </section>
+    </body>
+</html>

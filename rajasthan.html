@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Explore Rajasthan</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+    
+            h1 {
+                text-align: center;
+            }
+    
+            #activities-form {
+                width: 300px;
+                padding: 20px;
+                font-size: 16px;
+                margin: 0 auto;
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+    
+            input[type="checkbox"] {
+                margin-right: 5px;
+            }
+            #map {
+            height: 400px;
+            width: 100%;
+        }
+        </style>
+    </head>
+
+    <body>
+        <section class="ladakh-heading">
+            <div class="ladakh-heading-header">
+                <h1>RAJASTHAN - <i>The Land of Royals</i></h1>
+            </div>
+        </section>
+
+        <section class="Goa-info">
+                <div class="Goa-form">
+                <form action="rajasthan.php" method="post">
+                    <div class="Goa-form-a">
+                        <div class="inputBox">
+                            <label for="startdt">Journey begins on
+                            <input type="date" name="startdt" required></label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="enddt">Journey ends on
+                            <input type="date" name="enddt" required></label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="members">No. of Members
+                            <input type="number" name="members" required></label>
+                        </div>
+                    </div>
+
+                    <div class="Goa-form-b">
+                        <div class="inputBox">
+                            <label for="rajasthanaccomodation">Accommodation
+                            <select id="hotel-dropdown"  name="rajasthanaccomodation" required >
+                                    <option value="" disabled selected>Select a Hotel</option>
+                                    <option value="jaipur-palace">Jaipur Palace Hotel</option>
+                                    <option value="udaipur-lake-resort">Udaipur Lake Resort</option>
+                                    <option value="jodhpur-fort">Jodhpur Fort Hotel</option>
+                                    <option value="pushkar-camel-camp">Pushkar Camel Camp</option>
+                            </select></label>
+                        </div>
+                    
+                        <div class="inputBox">
+                            <label for="transport">Choose a Mode of Transport
+                                <select id="transport-dropdown"  name="transport" required >
+                                    <option value="" disabled selected>Select a Mode of Transport</option>
+                                    <option value="">Airways</option>
+                                    <option value="">Roadways</option>
+                                    <option value="">Railways</option>
+                                </select></label>
+                                
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="rajasthantourist">Want a Tourist Guide
+                            <select id="transport-dropdown"  name="rajasthantourist" required >
+                                    <option value="" disabled selected>Yes or No</option>
+                                    <option value="">Yes</option>
+                                    <option value="">No</option>
+                            </select></label>
+                        </div>
+                    </div>
+
+
+                    <div class="attraction-form">
+                        <h3>Places to Visit</h3>
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="places[]" value="jaipur">Jaipur
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="udaipur">Udaipur
+                            </label>
+                            <label>
+                                <input type="checkbox"name="places[]" value="jodhpur">Jodhpur
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="pushkar">Pushkar
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="jaisalmer">Jaisalmer
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="bikaner">Bikaner
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="places[]" value="ajmer">Ajmer
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="mount-abu">Mount Abu
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="ranthambore">Ranthambore
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="chittorgarh">Chittorgarh
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="kota">Kota
+                            </label>
+                            <label>
+                                <input type="checkbox" name="places[]" value="alwar">Alwar
+                            </label>
+                        </div>
+                    </div>
+
+       
+                    <div class="activity-form">
+                        <h3>Activities to Enjoy</h3>
+                        <div class="row">
+                        <label>
+                            <input type="checkbox" name="activities[]" value="camel-safari"> Camel Safari in Jaisalmer
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="boat-ride"> Boat Ride in Lake Pichola, Udaipur
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="elephant-ride"> Elephant Ride in Amer Fort, Jaipur
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="desert-camping"> Desert Camping in Pushkar
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="hot-air-balloon"> Hot Air Balloon Ride in Jaipur
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="tiger-safari"> Tiger Safari in Ranthambore National Park
+                        </label>
+                        </div>
+
+                        <div class="row">
+                        <label>
+                            <input type="checkbox" name="activities[]" value="shopping"> Shopping in Johari Bazaar, Jaipur
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="folk-dance"> Folk Dance Performance in Jodhpur
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="zip-lining"> Zip Lining at Mehrangarh Fort, Jodhpur
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="palace-visit"> Visit City Palace, Udaipur
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="wildlife-safari"> Wildlife Safari in Sariska Tiger Reserve
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities[]" value="cultural-events"> Cultural Events and Festivals
+                        </label>
+                        </div>
+                    </div>
+                            
+
+                    <input type="submit" class="Goa-btn" value="Save" name="submit">
+                </form>
+                </div>
+        </section>
+
+        
+        <div class="g-heading">
+            <h3>Famous Places in Rajasthan Map</h3></div>
+        
+            <div id="map"></div>
+        
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            <script>
+                var map = L.map('map').setView([26.9124, 75.7873], 7); // Rajasthan's coordinates and initial zoom level
+        
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+        
+                // Add markers for famous places in Rajasthan
+                var places = [
+                    { name: "Jaipur", location: [26.9124, 75.7873] },
+                    { name: "Udaipur", location: [24.5854, 73.7125] },
+                    { name: "Jodhpur", location: [26.2389, 73.0243] },
+                    { name: "Pushkar", location: [26.4892, 74.5510] },
+                    { name: "Jaisalmer", location: [26.9157, 70.9083] },
+                    { name: "Bikaner", location: [28.0229, 73.3119] },
+                    { name: "Ajmer", location: [26.4499, 74.6399] },
+                    { name: "Mount Abu", location: [24.5937, 72.7156] },
+                    { name: "Ranthambore", location: [26.0193, 76.5026] },
+                    { name: "Chittorgarh", location: [24.8799, 74.6246] },
+                    { name: "Kota", location: [25.2138, 75.8648] },
+                    { name: "Alwar", location: [27.5530, 76.6346] },
+                ];
+        
+                places.forEach(function (place) {
+                    L.marker(place.location).addTo(map)
+                        .bindPopup(place.name);
+                });
+            </script>
+        
+        
+
+
+
+        <!--------- footer---------->
+        <section class="footer">
+            <h4>More About Us</h4>
+            <p>For more updates visit our social media handles.</p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <p>Made with <i class="fa fa-heart-o"></i> by M3 group Vishwakarma Institute of Technology.</p>
+        </section>
+    </body>
+</html>

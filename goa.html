@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Plan your desires</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+    
+            h1 {
+                text-align: center;
+            }
+    
+            #activities-form {
+                width: 300px;
+                padding: 20px;
+                font-size: 16px;
+                margin: 0 auto;
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+    
+            input[type="checkbox"] {
+                margin-right: 5px;
+            }
+            #map {
+            height: 400px;
+            width: 100%;
+        }
+        </style>
+    </head>
+
+    <body>
+        <section class="Goa-heading">
+            <div class="Goa-heading-header">
+                <h1>GOA - <i>India's Coastal Gem</i></h1>
+            </div>
+        </section>
+
+        <section class="Goa-info">
+                <div class="Goa-form">
+                <form action="goa.php" method="post">
+                    <div class="Goa-form-a">
+                        <div class="inputBox">
+                            <label for="startdt">Journey begins on
+                            <input type="date" name="startdt" required></label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="enddt">Journey ends on
+                            <input type="date" name="enddt" required></label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="members">No. of Members
+                            <input type="number" name="members" required></label>
+                        </div>
+                    </div>
+
+                    <div class="Goa-form-b">
+                        <div class="inputBox">
+                            <label for="goaaccomodation">Accomodation
+                            <select id="hotel-dropdown"  name="goaaccomodation" required >
+                                    <option value="" disabled selected>Select a Hotel</option>
+                                    <option value="taj-exotica">Taj Exotica Resort & Spa</option>
+                                    <option value="leela-palace">The Leela Goa</option>
+                                    <option value="park-hyatt">Park Hyatt Goa Resort and Spa</option>
+                                    <option value="w-goa">W Goa</option>
+                                    <option value="alila-diwa">Alila Diwa Goa</option>
+                                    <option value="grand-hyatt">Grand Hyatt Goa</option>
+                                    <option value="vivanta-by-taj">Vivanta by Taj - Panaji</option>
+                                    <option value="novotel-dona-sylvia">Novotel Goa Dona Sylvia Resort</option>
+                                    <option value="cidadedegoa">Cidade de Goa</option>
+                                    <option value="radisson-blu">Radisson Blu Resort Goa Cavelossim Beach</option>
+                                    <option value="doubletree-hilton">DoubleTree by Hilton Hotel Goa - Arpora - Baga</option>
+                                    <option value="fortune-select-regina">Fortune Select Regina</option>
+                            </select></label>
+                        </div>
+                    
+                        <div class="inputBox">
+                            <label for="transport">Choose a Mode of Transport
+                                <select id="transport-dropdown"  name="transport" required >
+                                    <option value="" disabled selected>Select a Mode of Transport</option>
+                                    <option value="airways">Airways</option>
+                                    <option value="roadways">Roadways</option>
+                                    <option value="railways">Railways</option>
+                                </select></label>
+                                
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="goatourist">Want a Tourist Guide
+                            <select id="transport-dropdown"  name="goatourist" required >
+                                    <option value="" disabled selected>Yes or No</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                            </select></label>
+                        </div>
+                    </div>
+
+
+                    <div class="attraction-form">
+                        <h3>Places to Visit</h3>
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="baga-beach">Baga Beach
+                            </label>
+                            <label>
+                                <input type="checkbox" name="anjuna-beach">Anjuna Beach
+                            </label>
+                            <label>
+                                <input type="checkbox" name="calangute-beach">Calangute Beach
+                            </label>
+                            <label>
+                                <input type="checkbox" name="fort-aguada">Fort Aguada
+                            </label>
+                            <label>
+                                <input type="checkbox" name="dudhsagar-waterfalls">Dudhsagar Waterfalls
+                            </label>
+                            <label>
+                                <input type="checkbox" name="basilica-of-bom-jesus">Basilica of Bom Jesus
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="chapora-fort">Chapora Fort
+                            </label>
+                            <label>
+                                <input type="checkbox" name="colva-beach">Colva Beach
+                            </label>
+                            <label>
+                                <input type="checkbox" name="dona-paula">Dona Paula
+                            </label>
+                            <label>
+                                <input type="checkbox" name="gomantong-wildlife-sanctuary">Bhagwan Mahavir Wildlife Sanctuary
+                            </label>
+                            <label>
+                                <input type="checkbox" name="spice-plantations">Spice Plantations
+                            </label>
+                            <label>
+                                <input type="checkbox" name="shri-mangeshi-temple">Shri Mangeshi Temple
+                            </label>
+                        </div>
+                    </div>
+
+       
+                    <div class="activity-form">
+                        <h3>Activity to Perform</h3>
+                        <div class="row">
+                        <label>
+                            <input type="checkbox" name="water-sports"> Water Sports
+                        </label>
+                        <label>
+                            <input type="checkbox" name="nightlife"> Nightlife and Parties
+                        </label>
+                        <label>
+                            <input type="checkbox" name="bike-rides"> Bike Rides
+                        </label>
+                        <label>
+                            <input type="checkbox" name="cruise-tours"> Cruise Tours
+                        </label>
+                        <label>
+                            <input type="checkbox" name="shopping"> Shopping in Flea Markets
+                        </label>
+                        <label>
+                            <input type="checkbox" name="para-sailing"> Para-sailing
+                        </label>
+                        </div>
+
+                        <div class="row">
+                        <label>
+                            <input type="checkbox" name="dolphin-watching"> Dolphin Watching
+                        </label>
+                        <label>
+                            <input type="checkbox" name="river-rafting"> River Rafting
+                        </label>
+                        <label>
+                            <input type="checkbox" name="yoga-retreats"> Yoga Retreats
+                        </label>
+                        <label>
+                            <input type="checkbox" name="cultural-events"> Cultural Events and Festivals
+                        </label>
+                        <label>
+                            <input type="checkbox" name="wildlife-safaris"> Wildlife Safaris
+                        </label>
+                        <label>
+                            <input type="checkbox" name="spice-tours"> Spice Plantation Tours
+                        </label>
+                        </div>
+                    </div>
+                            
+
+                    <input type="submit" class="Goa-btn" value="Save" name="submit">
+                </form>
+                </div>
+        </section>
+
+        
+        <div class="g-heading">
+            <h3>Famous Places in Goa Map</h3></div>
+        
+            <div id="map"></div>
+        
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            <script>
+                var map = L.map('map').setView([15.2993, 74.1240], 10); // Goa's coordinates and initial zoom level
+        
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+        
+                // Add markers for famous places in Goa
+                var places = [
+                    { name: "Baga Beach", location: [15.5485, 73.7525] },
+                    { name: "Fort Aguada", location: [15.4981, 73.7497] },
+                    { name: "Dudhsagar Waterfalls", location: [15.3140, 74.3144] },
+                    { name: "Anjuna Beach", location: [15.5515, 73.7498] },
+                    { name: "Calangute Beach", location: [15.5542, 73.7518] },
+                    { name: "Chapora Fort", location: [15.5944, 73.7457] },
+                    { name: "Colva Beach", location: [15.2665, 73.9200] },
+                    { name: "Dona Paula", location: [15.4604, 73.8331] },
+                    { name: "Vagator Beach", location: [15.5610, 73.7437] },
+                    { name: "Miramar Beach", location: [15.4781, 73.7395] },
+                    { name: "Se Cathedral", location: [15.5024, 73.9116] },
+                    { name: "Palolem Beach", location: [15.0048, 74.0239] },
+                ];
+        
+                places.forEach(function (place) {
+                    L.marker(place.location).addTo(map)
+                        .bindPopup(place.name);
+                });
+            </script>
+        
+        
+
+
+
+        <!--------- footer---------->
+        <section class="footer">
+            <h4>More About Us</h4>
+            <p>For more updates visit our social media handles.</p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <p>Made with <i class="fa fa-heart-o"></i> by M3 group Vishwakarma Institute of Technology.</p>
+        </section>
+    </body>
+</html>

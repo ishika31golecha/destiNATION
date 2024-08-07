@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Plan your desires</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <section class="wed-heading">
+            <div class="wed-heading-header">
+                <h1>Wedding Planner</h1>
+            </div>
+        </section>
+
+        <section class="wed-info">
+                <div class="wed-form">
+                <form action="wedding.php" method="post">
+                    <div class="wed-form-a">
+                    <div class="inputBox">
+                        <label for="weddingdate">Wedding Date</label>
+                        <input type="date" name="weddingdate" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="weddingvenue">Wedding Venue</label>
+                        <input type="text" name="weddingvenue" required>
+                    </div>
+                    </div>
+
+                    <h3>Theme and Style for the Functions</h3>
+                    <div class="wed-form-b">
+                    <div class="inputBox">
+                        <label for="haldi">Haldi</label>
+                        <input type="text" name="haldi" required>
+                    </div>
+                    
+                    <div class="inputBox">
+                        <label for="mehandi">Mehandi</label>
+                        <input type="text" name="mehandi" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="sangeet">Sangeet</label>
+                        <input type="text" name="sangeet" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="baarat">Baarat</label>
+                        <input type="text" name="baarat" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="phere">Phere</label>
+                        <input type="text" name="phere" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="reception">Reception</label>
+                        <input type="text" name="reception" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="vidai">Vidai</label>
+                        <input type="text" name="vidai" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="grihpravesh">Grih Pravesh</label>
+                        <input type="text" name="grihpravesh">
+                    </div>
+                    </div>
+            
+                    
+                    <h3>Arrangements and Bookings</h3>
+                    <div class="row">
+                    <div class="wed-form-c">
+                        <div class="inputBox">
+                            <label for="caterers">Caterers</label>
+                            <input type="radio" name="caterers" id="caterers1" value="Yes">
+                            <label for="caterers1">Yes</label>
+                            <input type="radio" name="caterers" id="caterers2" value="No">
+                            <label for="caterers2">No</label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="decorators">Decorators</label>
+                            <input type="radio" name="decorators" id="decorators1" value="Yes">
+                            <label for="decorators1">Yes</label>
+                            <input type="radio" name="decorators" id="decorators2" value="No">
+                            <label for="decorators2">No</label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="photographer">Photographer and Videographer</label>
+                            <input type="radio" name="photographer" id="photographer1" value="Yes">
+                            <label for="photographer1">Yes</label>
+                            <input type="radio" name="photographer" id="photographer2" value="No">
+                            <label for="photographer2">No</label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="band">Band</label>
+                            <input type="radio" name="band" id="band1" value="Yes">
+                            <label for="band1">Yes</label>
+                            <input type="radio" name="band" id="band2" value="No">
+                            <label for="band2">No</label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="musician">Musicians/DJ</label>
+                            <input type="radio" name="musician" id="musician1" value="Yes">
+                            <label for="musician1">Yes</label>
+                            <input type="radio" name="musician" id="musician2" value="No">
+                            <label for="musician2">No</label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="outfit">Wedding Outfits</label>
+                            <input type="radio" name="outfit" id="outfit1" value="Yes">
+                            <label for="outfit1">Yes</label>
+                            <input type="radio" name="outfit" id="outfit2" value="No">
+                            <label for="outfit2">No</label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="makeup">MakeUp Artist</label>
+                            <input type="radio" name="makeup" id="makeup1" value="Yes">
+                            <label for="makeup1">Yes</label>
+                            <input type="radio" name="makeup" id="makeup2" value="No">
+                            <label for="makeup2">No</label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="parlour">Parlour Appointments</label>
+                            <input type="radio" name="parlour" id="parlour1" value="Yes">
+                            <label for="parlour1">Yes</label>
+                            <input type="radio" name="parlour" id="parlour2" value="No">
+                            <label for="parlour2">No</label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="cards">Invitation Cards Printed</label>
+                            <input type="radio" name="cards" id="cards1" value="Yes">
+                            <label for="cards1">Yes</label>
+                            <input type="radio" name="cards" id="cards2" value="No">
+                            <label for="cards2">No</label>
+                        </div>
+                        </div>
+
+                        <div class="wed-form-d">
+                            <div class="inputBox">
+                                <label for="caterersname">Catering company Name</label>
+                                <input type="text" name="caterersname" required>
+                            </div>
+                    
+                            <div class="inputBox">
+                                <label for="decoratorsname">Decorator company Name</label>
+                                <input type="text" name="decoratorsname" required>
+                            </div>
+
+                            <div class="inputBox">
+                                <label for="photographername">Photography and Videography company Name</label>
+                                <input type="text" name="photographername" required>
+                            </div>
+
+                            <div class="inputBox">
+                                <label for="bandname">Band Name</label>
+                                <input type="text" name="bandname" required>
+                            </div>
+
+                            <div class="inputBox">
+                                <label for="musicianname">Musicians/DJ company Name</label>
+                                <input type="text" name="musicianname" required>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="guestlist">
+                            <h3>Guest List: <a href="https://docs.google.com/spreadsheets/d/1VfeBzLrRLmQN9pgcldq2kP74gU4Yut2iVWYPVBmCtRg/edit?usp=sharing">Start Preparing</a></h3>
+                        </div>
+
+                        <input type="submit" class="eng-btn" value="Save" name="submit">
+
+
+                </form>
+                </div>
+            
+        </section>
+
+        <!--------- footer---------->
+        <section class="footer">
+            <h4>More About Us</h4>
+            <p>For more updates visit our social media handles.</p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <p>Made with <i class="fa fa-heart-o"></i> by M3 group Vishwakarma Institute of Technology.</p>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Plan your desires</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+            function redirectToPage() {
+              let location = document.getElementById('locations').value;
+        
+              switch (location) {
+                case "rajasthan":
+                  window.location.href = "rajasthan.html";
+                  break;
+                case "goa":
+                  window.location.href = "goa.html";
+                  break;
+                case "kerela":
+                  window.location.href = "kerela.html";
+                  break;
+                case "kashmir":
+                  window.location.href = "kashmir.html";
+                  break;
+                case "ladakh":
+                  window.location.href = "ladakh.html";
+                  break;  
+                case "himachal":
+                  window.location.href = "himachal.html";
+                  break;
+                case "gujarat":
+                  window.location.href = "gujarat.html";
+                  break;
+                case "meghalaya":
+                  window.location.href = "meghalaya.html";
+                  break;
+                default:
+                  alert("Please select a location.");
+              }
+            }
+          </script>
+    </head>
+
+    <body>
+        <section class="template">    
+            <div class="row">
+                <div class="template-col">
+                    <img src="https://i0.wp.com/travellingbuzz.com/wp-content/uploads/2016/02/travel-looking.jpg?resize=890%2C580&ssl=1">
+                </div>
+            </div>
+        </section>
+
+        <section class="template-a">
+                <div class="template-col-a">
+                    <img src="https://media.istockphoto.com/id/1344771294/photo/happy-family-in-masks-enjoying-travel-together.jpg?s=612x612&w=0&k=20&c=JMGLBlMM4TyAQ1CAgDJx9igoSucyehARKkvN2rZpec0=">
+                </div>
+        </section>
+
+        
+        
+        <section class="heading">
+                <div class="template-h">
+                    <h1>Roadmap to Carve your Unique Journey</h1>
+                </div>
+        </section>
+
+
+        <section class="book">
+
+            <div class="row">
+                <div class="fill-col">
+                    
+                        <div class="inputBox">
+                            <h3>Location</h3> 
+                        <div class="dropdown">
+                            <select id="locations" name="locationName" required>
+                                <option value="none">None</option>
+                                <option value="rajasthan">Rajasthan</option>
+                                <option value="goa">Goa</option>
+                                <option value="kerela">Kerela</option>
+                                <option value="kashmir">Kashmir</option>
+                                <option value="ladakh">Ladakh</option>
+                                <option value="himachal">Himachal Pradesh</option>
+                                <option value="gujarat">Gujarat</option>
+                                <option value="meghalaya">Meghalaya</option>
+                            </select>
+                        </div>    
+                        </div>
+
+                        
+
+                        <div class="btn-t">
+                            <button onclick="redirectToPage()">Start Planning</button>
+                        </div>
+                   
+                </div> 
+
+            </div>
+        </section>
+
+<!----------------footer-------------->
+<section class="footer"> 
+    <h4>More About Us</h4>
+        <p>For more updates visit our social media handles.</p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+             </div>
+        <p>Made with <i class="fa fa-heart-o"></i> by M3 group Vishwakarma Institute of Technology.</p>
+</section>
+
+    </body>
+</html>
+
+

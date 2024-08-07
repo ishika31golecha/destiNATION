@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Explore Himachal Pradesh</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+    
+            h1 {
+                text-align: center;
+            }
+    
+            #activities-form {
+                width: 300px;
+                padding: 20px;
+                font-size: 16px;
+                margin: 0 auto;
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+    
+            input[type="checkbox"] {
+                margin-right: 5px;
+            }
+            #map {
+            height: 400px;
+            width: 100%;
+        }
+        </style>
+    </head>
+
+    <body>
+        <section class="ladakh-heading">
+            <div class="ladakh-heading-header">
+                <h1>HIMACHAL PRADESH - <i>Land of the Gods</i></h1>
+            </div>
+        </section>
+
+        <section class="Goa-info">
+                <div class="Goa-form">
+                <form action="himachal.php" method="post">
+                    <div class="Goa-form-a">
+                        <div class="inputBox">
+                            <label for="startdt">Journey begins on
+                            <input type="date" name="startdt" required></label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="enddt">Journey ends on
+                            <input type="date" name="enddt" required></label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="members">No. of Members
+                            <input type="number" name="members" required></label>
+                        </div>
+                    </div>
+
+                    <div class="Goa-form-b">
+                        <div class="inputBox">
+                            <label for="himachalaccomodation">Accommodation
+                            <select id="hotel-dropdown"  name="himachalaccomodation" required >
+                                    <option value="" disabled selected>Select a Hotel</option>
+                                    <option value="manali-luxury-resort">Manali Luxury Resort</option>
+                                    <option value="shimla-mountain-retreat">Shimla Mountain Retreat</option>
+                                    <option value="dharamshala-view-inn">Dharamshala View Inn</option>
+                                    <option value="dalhousie-royal-haven">Dalhousie Royal Haven</option>
+                            </select></label>
+                        </div>
+                    
+                        <div class="inputBox">
+                            <label for="transport">Choose a Mode of Transport
+                                <select id="transport-dropdown"  name="transport" required >
+                                    <option value="" disabled selected>Select a Mode of Transport</option>
+                                    <option value="">Airways</option>
+                                    <option value="">Roadways</option>
+                                    <option value="">Railways</option>
+                                </select></label>
+                                
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="himachaltourist">Want a Tourist Guide
+                            <select id="transport-dropdown"  name="himachaltourist" required >
+                                    <option value="" disabled selected>Yes or No</option>
+                                    <option value="">Yes</option>
+                                    <option value="">No</option>
+                            </select></label>
+                        </div>
+                    </div>
+
+
+                    <div class="attraction-form">
+                        <h3>Places to Visit</h3>
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="manali">Manali
+                            </label>
+                            <label>
+                                <input type="checkbox" name="shimla">Shimla
+                            </label>
+                            <label>
+                                <input type="checkbox" name="dharamshala">Dharamshala
+                            </label>
+                            <label>
+                                <input type="checkbox" name="dalhousie">Dalhousie
+                            </label>
+                            <label>
+                                <input type="checkbox" name="kasol">Kasol
+                            </label>
+                            <label>
+                                <input type="checkbox" name="khajjiar">Khajjiar
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="kullu">Kullu
+                            </label>
+                            <label>
+                                <input type="checkbox" name="chamba">Chamba
+                            </label>
+                            <label>
+                                <input type="checkbox" name="palampur">Palampur
+                            </label>
+                            <label>
+                                <input type="checkbox" name="kasauli">Kasauli
+                            </label>
+                            <label>
+                                <input type="checkbox" name="kufri">Kufri
+                            </label>
+                            <label>
+                                <input type="checkbox" name="bhuntar">Bhuntar
+                            </label>
+                        </div>
+                    </div>
+
+       
+                    <div class="activity-form">
+                        <h3>Activities to Enjoy</h3>
+                        <div class="row">
+                        <label>
+                            <input type="checkbox" name="trekking"> Trekking in Himachal
+                        </label>
+                        <label>
+                            <input type="checkbox" name="skiing"> Skiing in Solang Valley
+                        </label>
+                        <label>
+                            <input type="checkbox" name="river-rafting"> River Rafting in Beas River
+                        </label>
+                        <label>
+                            <input type="checkbox" name="paragliding"> Paragliding in Bir-Billing
+                        </label>
+                        <label>
+                            <input type="checkbox" name="shopping"> Shopping in Mall Road
+                        </label>
+                        <label>
+                            <input type="checkbox" name="cultural-events"> Cultural Events and Festivals
+                        </label>
+                        </div>
+
+                        <div class="row">
+                        <label>
+                            <input type="checkbox" name="horse-riding"> Horse Riding in Kufri
+                        </label>
+                        <label>
+                            <input type="checkbox" name="biking"> Biking in Spiti Valley
+                        </label>
+                        <label>
+                            <input type="checkbox" name="yoga-retreats"> Yoga Retreats in Dharamshala
+                        </label>
+                        <label>
+                            <input type="checkbox" name="camping"> Camping in Kasol
+                        </label>
+                        <label>
+                            <input type="checkbox" name="rock-climbing"> Rock Climbing in Manali
+                        </label>
+                        <label>
+                            <input type="checkbox" name="sightseeing"> Sightseeing in Shimla
+                        </label>
+                        </div>
+                    </div>
+                            
+
+                    <input type="submit" class="Goa-btn" value="Save" name="submit">
+                </form>
+                </div>
+        </section>
+
+        
+        <div class="g-heading">
+            <h3>Famous Places in Himachal Pradesh Map</h3></div>
+        
+            <div id="map"></div>
+        
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            <script>
+                var map = L.map('map').setView([32.0842, 77.5712], 8); // Himachal Pradesh's coordinates and initial zoom level
+        
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+        
+                // Add markers for famous places in Himachal Pradesh
+                var places = [
+                    { name: "Manali", location: [32.2396, 77.1887] },
+                    { name: "Shimla", location: [31.1048, 77.1734] },
+                    { name: "Dharamshala", location: [32.2324, 76.3146] },
+                    { name: "Dalhousie", location: [32.5352, 75.9070] },
+                    { name: "Kasol", location: [32.0090, 77.3150] },
+                    { name: "Khajjiar", location: [32.5498, 76.0095] },
+                    { name: "Kullu", location: [31.9816, 77.1097] },
+                    { name: "Chamba", location: [32.5569, 76.1327] },
+                    { name: "Palampur", location: [32.1091, 76.5357] },
+                    { name: "Kasauli", location: [30.8998, 76.9659] },
+                    { name: "Kufri", location: [31.0982, 77.2674] },
+                    { name: "Bhuntar", location: [31.8757, 77.1542] },
+                ];
+        
+                places.forEach(function (place) {
+                    L.marker(place.location).addTo(map)
+                        .bindPopup(place.name);
+                });
+            </script>
+        
+        
+
+
+
+        <!--------- footer---------->
+        <section class="footer">
+            <h4>More About Us</h4>
+            <p>For more updates visit our social media handles.</p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <p>Made with <i class="fa fa-heart-o"></i> by M3 group Vishwakarma Institute of Technology.</p>
+        </section>
+    </body>
+</html>

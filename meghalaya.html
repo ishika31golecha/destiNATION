@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Discover Meghalaya</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+    
+            h1 {
+                text-align: center;
+            }
+    
+            #activities-form {
+                width: 300px;
+                padding: 20px;
+                font-size: 16px;
+                margin: 0 auto;
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+    
+            input[type="checkbox"] {
+                margin-right: 5px;
+            }
+            #map {
+            height: 400px;
+            width: 100%;
+        }
+        </style>
+    </head>
+
+    <body>
+        <section class="ladakh-heading">
+            <div class="ladakh-heading-header">
+                <h1>MEGHALAYA - <i>Abode of Clouds</i></h1>
+            </div>
+        </section>
+
+        <section class="Goa-info">
+                <div class="Goa-form">
+                <form action="meghalaya.php" method="post">
+                    <div class="Goa-form-a">
+                        <div class="inputBox">
+                            <label for="startdt">Journey begins on
+                            <input type="date" name="startdt" required></label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="enddt">Journey ends on
+                            <input type="date" name="enddt" required></label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="members">No. of Members
+                            <input type="number" name="members" required></label>
+                        </div>
+                    </div>
+
+                    <div class="Goa-form-b">
+                        <div class "inputBox">
+                            <label for="meghalayaaccomodation">Accommodation
+                            <select id="hotel-dropdown"  name="meghalayaaccomodation" required >
+                                    <option value="" disabled selected>Select a Hotel</option>
+                                    <option value="shillong-luxury">Shillong Luxury Suites</option>
+                                    <option value="cherrapunjee-retreat">Cherrapunjee Retreat</option>
+                                    <option value="mawsynram-view">Mawsynram Mountain View Resort</option>
+                                    <option value="tura-escape">Tura Escape Resort</option>
+                            </select></label>
+                        </div>
+                    
+                        <div class="inputBox">
+                            <label for="transport">Choose a Mode of Transport
+                                <select id="transport-dropdown"  name="transport" required >
+                                    <option value="" disabled selected>Select a Mode of Transport</option>
+                                    <option value="">Airways</option>
+                                    <option value="">Roadways</option>
+                                    <option value="">Railways</option>
+                                </select></label>
+                                
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="meghalayatourist">Want a Tourist Guide
+                            <select id="transport-dropdown"  name="meghalayatourist" required >
+                                    <option value="" disabled selected>Yes or No</option>
+                                    <option value="">Yes</option>
+                                    <option value="">No</option>
+                            </select></label>
+                        </div>
+                    </div>
+
+
+                    <div class="attraction-form">
+                        <h3>Places to Visit</h3>
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="shillong">Shillong
+                            </label>
+                            <label>
+                                <input type="checkbox" name="cherrapunjee">Cherrapunjee
+                            </label>
+                            <label>
+                                <input type="checkbox" name="mawsynram">Mawsynram
+                            </label>
+                            <label>
+                                <input type="checkbox" name="tura">Tura
+                            </label>
+                            <label>
+                                <input type="checkbox" name="dawki">Dawki
+                            </label>
+                            <label>
+                                <input type="checkbox" name="nongstoin">Nongstoin
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="jowai">Jowai
+                            </label>
+                            <label>
+                                <input type="checkbox" name="williamnagar">Williamnagar
+                            </label>
+                            <label>
+                                <input type="checkbox" name="baghmara">Baghmara
+                            </label>
+                            <label>
+                                <input type="checkbox" name="ranikor">Ranikor
+                            </label>
+                            <label>
+                                <input type="checkbox" name="mairang">Mairang
+                            </label>
+                            <label>
+                                <input type="checkbox" name="sohra">Sohra (Sohra)</label>
+                            </label>
+                        </div>
+                    </div>
+
+       
+                    <div class="activity-form">
+                        <h3>Activities to Enjoy</h3>
+                        <div class="row">
+                        <label>
+                            <input type="checkbox" name="living-root-bridges"> Living Root Bridges Trek
+                        </label>
+                        <label>
+                            <input type="checkbox" name="cave-exploration"> Cave Exploration in Mawsynram
+                        </label>
+                        <label>
+                            <input type="checkbox" name="boating-dawki"> Boating in Dawki River
+                        </label>
+                        <label>
+                            <input type="checkbox" name="elephant-falls"> Visit Elephant Falls in Shillong
+                        </label>
+                        <label>
+                            <input type="checkbox" name="tura-peak"> Tura Peak Expedition
+                        </label>
+                        <label>
+                            <input type="checkbox" name="dawki-camping"> Camping in Dawki
+                        </label>
+                        </div>
+
+                        <div class="row">
+                        <label>
+                            <input type="checkbox" name="nongkhnum-island"> Nongkhnum Island Exploration
+                        </label>
+                        <label>
+                            <input type="checkbox" name="jowai-caves"> Jowai Caves Adventure
+                        </label>
+                        <label>
+                            <input type="checkbox" name="zip-lining"> Zip-lining in Mairang
+                        </label>
+                        <label>
+                            <input type="checkbox" name="williamnagar-wildlife"> Wildlife Safari in Williamnagar
+                        </label>
+                        <label>
+                            <input type="checkbox" name="mawphlang-sacred-forest"> Mawphlang Sacred Forest Visit
+                        </label>
+                        <label>
+                            <input type="checkbox" name="ranikor-angling"> Angling in Ranikor
+                        </label>
+                        </div>
+                    </div>
+                            
+
+                    <input type="submit" class="Goa-btn" value="Save" name="submit">
+                </form>
+                </div>
+        </section>
+
+        
+        <div class="g-heading">
+            <h3>Famous Places in Meghalaya Map</h3></div>
+        
+            <div id="map"></div>
+        
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            <script>
+                var map = L.map('map').setView([25.4670, 91.3662], 8); // Meghalaya's coordinates and initial zoom level
+        
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+        
+                // Add markers for famous places in Meghalaya
+                var places = [
+                    { name: "Shillong", location: [25.5788, 91.8721] },
+                    { name: "Cherrapunjee", location: [25.2986, 91.5822] },
+                    { name: "Mawsynram", location: [25.2986, 91.5822] },
+                    { name: "Tura", location: [25.5197, 90.2205] },
+                    { name: "Dawki", location: [25.1997, 91.8623] },
+                    { name: "Nongstoin", location: [25.5148, 91.2614] },
+                    { name: "Jowai", location: [25.2976, 92.4086] },
+                    { name: "Williamnagar", location: [25.3039, 90.2033] },
+                    { name: "Baghmara", location: [25.4112, 90.5702] },
+                    { name: "Ranikor", location: [25.3054, 90.6108] },
+                    { name: "Mairang", location: [25.5715, 91.4011] },
+                    { name: "Sohra", location: [25.2986, 91.5822] },
+                ];
+        
+                places.forEach(function (place) {
+                    L.marker(place.location).addTo(map)
+                        .bindPopup(place.name);
+                });
+            </script>
+        
+        
+
+
+
+        <!--------- footer---------->
+        <section class="footer">
+            <h4>More About Us</h4>
+            <p>For more updates visit our social media handles.</p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <p>Made with <i class="fa fa-heart-o"></i> by M3 group Vishwakarma Institute of Technology.</p>
+        </section>
+    </body>
+</html>

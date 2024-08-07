@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Explore Ladakh</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+    
+            h1 {
+                text-align: center;
+            }
+    
+            #activities-form {
+                width: 300px;
+                padding: 20px;
+                font-size: 16px;
+                margin: 0 auto;
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+    
+            input[type="checkbox"] {
+                margin-right: 5px;
+            }
+            #map {
+            height: 400px;
+            width: 100%;
+        }
+        </style>
+    </head>
+
+    <body>
+        <section class="ladakh-heading">
+            <div class="ladakh-heading-header">
+                <h1>LADAKH - <i>Land of High Passes</i></h1>
+            </div>
+        </section>
+
+        <section class="Goa-info">
+                <div class="Goa-form">
+                <form action="ladakh.php" method="post">
+                    <div class="Goa-form-a">
+                        <div class="inputBox">
+                            <label for="startdt">Journey begins on
+                            <input type="date" name="startdt" required></label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="enddt">Journey ends on
+                            <input type="date" name="enddt" required></label>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="members">No. of Members
+                            <input type="number" name="members" required></label>
+                        </div>
+                    </div>
+
+                    <div class="Goa-form-b">
+                        <div class="inputBox">
+                            <label for="ladakhaccomodation">Accommodation
+                            <select id="hotel-dropdown"  name="ladakhaccomodation" required >
+                                    <option value="" disabled selected>Select a Hotel</option>
+                                    <option value="leh-luxury">Leh Luxury Resorts</option>
+                                    <option value="nubra-camp">Nubra Valley Camps</option>
+                                    <option value="pangong-lake-view">Pangong Lake View Guesthouse</option>
+                                    <option value="kargil-retreat">Kargil Retreat Inn</option>
+                            </select></label>
+                        </div>
+                    
+                        <div class="inputBox">
+                            <label for="transport">Choose a Mode of Transport
+                                <select id="transport-dropdown"  name="transport" required >
+                                    <option value="" disabled selected>Select a Mode of Transport</option>
+                                    <option value="">Airways</option>
+                                    <option value="">Roadways</option>
+                                    <option value="">Railways</option>
+                                </select></label>
+                                
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="ladakhtourist">Want a Tourist Guide
+                            <select id="transport-dropdown"  name="ladakhtourist" required >
+                                    <option value="" disabled selected>Yes or No</option>
+                                    <option value="">Yes</option>
+                                    <option value="">No</option>
+                            </select></label>
+                        </div>
+                    </div>
+
+
+                    <div class="attraction-form">
+                        <h3>Places to Visit</h3>
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="leh">Leh
+                            </label>
+                            <label>
+                                <input type="checkbox" name="nubra-valley">Nubra Valley
+                            </label>
+                            <label>
+                                <input type="checkbox" name="pangong-lake">Pangong Lake
+                            </label>
+                            <label>
+                                <input type="checkbox" name="tso-moriri">Tso Moriri
+                            </label>
+                            <label>
+                                <input type="checkbox" name="kargil">Kargil
+                            </label>
+                            <label>
+                                <input type="checkbox" name="hemis">Hemis
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <label>
+                                <input type="checkbox" name="lamayuru">Lamayuru
+                            </label>
+                            <label>
+                                <input type="checkbox" name="spituk-monastery">Spituk Monastery
+                            </label>
+                            <label>
+                                <input type="checkbox" name="zanskar-valley">Zanskar Valley
+                            </label>
+                            <label>
+                                <input type="checkbox" name="shey-palace">Shey Palace
+                            </label>
+                            <label>
+                                <input type="checkbox" name="magnetic-hill">Magnetic Hill
+                            </label>
+                            <label>
+                                <input type="checkbox" name="thiksey-monastery">Thiksey Monastery
+                            </label>
+                        </div>
+                    </div>
+
+       
+                    <div class="activity-form">
+                        <h3>Activities to Experience</h3>
+                        <div class="row">
+                        <label>
+                            <input type="checkbox" name="trekking-ladakh"> Trekking in Ladakh
+                        </label>
+                        <label>
+                            <input type="checkbox" name="camel-safari"> Camel Safari in Nubra Valley
+                        </label>
+                        <label>
+                            <input type="checkbox" name="camping-pangong"> Camping by Pangong Lake
+                        </label>
+                        <label>
+                            <input type="checkbox" name="bike-rides-ladakh"> Bike Rides in Ladakh
+                        </label>
+                        <label>
+                            <input type="checkbox" name="river-rafting-zanskar"> River Rafting in Zanskar River
+                        </label>
+                        <label>
+                            <input type="checkbox" name="stargazing-ladakh"> Stargazing in Ladakh
+                        </label>
+                        </div>
+
+                        <div class="row">
+                        <label>
+                            <input type="checkbox" name="cultural-festivals"> Cultural Festivals in Leh
+                        </label>
+                        <label>
+                            <input type="checkbox" name="yak-safari"> Yak Safari in Hemis
+                        </label>
+                        <label>
+                            <input type="checkbox" name="motorbiking-expedition"> Motorbiking Expedition
+                        </label>
+                        <label>
+                            <input type="checkbox" name="monastery-exploration"> Monastery Exploration
+                        </label>
+                        <label>
+                            <input type="checkbox" name="hot-air-balloon-ride"> Hot Air Balloon Ride in Leh
+                        </label>
+                        <label>
+                            <input type="checkbox" name="photography-tour"> Photography Tour in Ladakh
+                        </label>
+                        </div>
+                    </div>
+                            
+
+                    <input type="submit" class="Goa-btn" value="Save" name="submit">
+                </form>
+                </div>
+        </section>
+
+        
+        <div class="g-heading">
+            <h3>Famous Places in Ladakh Map</h3></div>
+        
+            <div id="map"></div>
+        
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            <script>
+                var map = L.map('map').setView([34.1526, 77.5770], 8); // Ladakh's coordinates and initial zoom level
+        
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+        
+                // Add markers for famous places in Ladakh
+                var places = [
+                    { name: "Leh", location: [34.1649, 77.5848] },
+                    { name: "Nubra Valley", location: [35.7588, 77.5296] },
+                    { name: "Pangong Lake", location: [33.8282, 78.2812] },
+                    { name: "Tso Moriri", location: [32.9983, 78.0105] },
+                    { name: "Kargil", location: [34.5553, 76.1252] },
+                    { name: "Hemis", location: [34.1632, 77.5849] },
+                    { name: "Lamayuru", location: [34.2676, 76.8729] },
+                    { name: "Spituk Monastery", location: [34.1406, 77.4939] },
+                    { name: "Zanskar Valley", location: [33.7734, 76.5762] },
+                    { name: "Shey Palace", location: [34.0888, 77.6306] },
+                    { name: "Magnetic Hill", location: [34.0768, 77.5838] },
+                    { name: "Thiksey Monastery", location: [33.7489, 78.2390] },
+                ];
+        
+                places.forEach(function (place) {
+                    L.marker(place.location).addTo(map)
+                        .bindPopup(place.name);
+                });
+            </script>
+        
+        
+
+
+
+        <!--------- footer---------->
+        <section class="footer">
+            <h4>More About Us</h4>
+            <p>For more updates visit our social media handles.</p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <p>Made with <i class="fa fa-heart-o"></i> by M3 group Vishwakarma Institute of Technology.</p>
+        </section>
+    </body>
+</html>

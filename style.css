@@ -1,0 +1,1634 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.header{
+    min-height:100vh;
+    width:100%;
+    background-image: linear-gradient(rgba(88, 53, 0, 0.5), rgba(88, 53, 0, 0.5)), url(https://insights.bcdme.com/hs-fs/hubfs/Incentive%20Trip%20Planning-1.jpg?width=1920&name=Incentive%20Trip%20Planning-1.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: whitesmoke;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+
+
+.text-box{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.text-box h1{
+    font-size: 100px;
+}
+
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 35px;
+    color: white;
+}
+
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btn:hover{
+    border: 1px solid whitesmoke;
+    background: rgb(42, 81, 253);
+    transition: 1s;
+}
+
+nav .fa{
+    display: none;
+}
+
+/*------vision------*/
+.vision{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 80px;
+}
+
+h2{
+    font-size: 55px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);   
+}
+
+p{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 25px;
+}
+
+.row{
+    margin: 5;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+}
+
+.facility-col{
+    flex: 100%;
+    background: rgb(70, 100, 250);
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.facility-col h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+    font-size: 25px;
+    color: white;
+}
+
+.facility-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.5);
+}
+
+.facility-col p{
+    color: white;
+    text-align: left;
+}
+
+.facility-col li{
+    color: white;
+    text-align: left;
+   
+}
+
+/*-------features--------*/
+.features{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.features h1{
+    font-size: 55px;
+}
+
+.features-col{
+    padding-top: 0;
+    flex-basis: 30%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.layer{
+    background: rgba(255, 252, 252, 0.25);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: o.5s;
+}
+
+.layer:hover{
+    background: rgba(88, 53, 0, 0.85);
+}
+
+.layer h3{
+    width: 100%;
+    color: white;
+    font-weight: 500;
+    font-size: 35px;
+    bottom: 0;
+    left: 50%;
+    margin-top: 50%;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.layer:hover h3{
+    bottom: 49%;
+    opacity:1;
+}
+
+.layer p{
+    color: white;
+    opacity: 0;
+}
+
+.layer:hover p{
+    bottom:49%;
+    opacity: 1;
+}
+
+/*--------footer--------*/
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer h4{
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.icons .fa{
+    color: rgb(70, 100, 250);
+    margin: 0 10px;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.fa-heart-o{
+    color: red;
+}
+
+.profile-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/*------------------------about us page--------------------------*/
+.sub-header{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(88, 53, 0, 0.5), rgba(88, 53, 0, 0.5)), url(https://fsmag-ecs.paceinteractive.com/magazine/wp-content/uploads/2016/11/KOH_543_hero.jpg);
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+.sub-header h1{
+    margin: 100px;
+    font-size: 80px;
+}
+
+.about-us{
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.about-col{
+    flex-basis: 48%;
+    padding: 30px 0;
+}
+
+.about-col img{
+    width: 100%;
+    height: 500px;
+    border-radius: 35px;
+}
+
+.about-us h2{
+    font-size: 40px;
+    text-align: center;
+}
+
+.about-col p{
+    padding: 15px 0 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------contact us page----------------*/
+.sub-sub-header{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(88, 53, 0, 0.5), rgba(88, 53, 0, 0.5)), url(https://www.cbhcommunications.com/wp-content/uploads/2013/10/contact-us.png);
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+.sub-sub-header h1{
+    margin: 100px;
+    font-size: 80px;
+}
+
+.location{
+    width: 80%;
+    margin: auto;
+    padding: 80px 0;
+}
+.location  iframe{
+    width: 100%;
+}
+.contact-us{
+    width: 80%;
+    margin: auto;
+}
+.contact-col{
+    flex-basis: 48%;
+    margin-bottom: 30px;
+}
+.contact-col div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.contact-col .fa{
+    font-size: 35px;
+    color: #f44336;
+    margin: 0;
+    margin-right: 40px;
+}
+.contact-col div p{
+    padding: 0;
+    color: #555;
+}
+.contact-col div h5{
+    font-size: 25px;
+    margin-bottom: 5px;
+    color: black;
+    font-weight: 400;
+}
+
+.contact-col input, .contact-col textarea{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
+.hero-btn-red-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btn-red-btn:hover{
+    border: 1px solid whitesmoke;
+    background: rgb(42, 81, 253);
+    transition: 1s;
+}
+
+
+
+
+
+/*---------login---------*/
+.sub-sub-sub-header{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(88, 53, 0, 0.5), rgba(88, 53, 0, 0.5)), url(https://ichef.bbci.co.uk/news/976/cpsprodpb/EC22/production/_120705406_976_gettyimages-154035399.jpg);
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+.sub-sub-sub-header h1{
+    margin: 100px;
+    font-size: 80px;
+}
+
+.account{
+    width: 90%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.account-col{
+    flex-basis: 48%;
+    margin-top: 0;
+}
+
+.account-col img{
+    width: 90%;
+    height: 400px;
+    margin-top: -40px;
+    border-radius: 35px;
+}
+
+.account-col form{
+    font-size: 30px;
+ 
+}
+
+.account-col input{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.hero-btn-red-btn{
+    width: 100%;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btn-red-btn:hover{
+    border: 1px solid whitesmoke;
+    background: rgb(42, 81, 253);
+    transition: 1s;
+}
+
+.account-col p{
+    font-size: 30px;
+}
+
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn:hover{
+    border: 1px solid whitesmoke;
+    background: rgb(42, 81, 253);
+    transition: 1s;
+}
+
+.forgot-password{
+    margin-top: 50px;
+}
+
+.create{
+    text-align: center;
+    margin-bottom: 55px;
+    margin-top: 40px;
+}
+
+.create h3{
+    font-size: 45px;
+}
+
+
+
+
+
+/*------------create your account---------------*/
+.sub-sub-sub-sub-header{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(88, 53, 0, 0.5), rgba(88, 53, 0, 0.5)), url(https://previews.123rf.com/images/garloon/garloon1607/garloon160700001/59404075-view-from-above-businesswoman-with-cup-of-coffee-working-on-laptop-in-the-office.jpg);
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+.sub-sub-sub-sub-header h1{
+    margin: 100px;
+    font-size: 80px;
+}
+
+.create-col{
+    margin-top: 0;
+    margin-left: -300px;
+}
+
+.create-col input{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 100px;
+}
+
+.create-col h3{
+    font-size: 30px;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+.create-col form{
+    margin-top: 0;
+    margin-left: 550px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------selectdesires-------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
+.style-header{
+    margin-top: 30px;
+    height: 15vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(88, 53, 0, 0.5), rgba(88, 53, 0, 0.5)), url(https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_640.jpg);
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+.select-col img{
+    width: 90%;
+    height: 300px;
+    border-radius: 35px;
+    margin-left: 130px;
+}
+
+.select-col-a{
+    margin-top: -370px;
+    margin-left: 800px;
+}
+
+.select-col-a h2{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.select-col-a p{
+    text-align: center;
+}
+
+.btn-a{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-left: 130px;
+}
+
+.btn-a:hover{
+    border: 1px solid whitesmoke;
+    background: rgb(42, 81, 253);
+    transition: 1s;
+}
+
+.select-col-b{
+    margin-left: 160px;
+    margin-top: -60px;
+}
+
+.select-col-b h2{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.select-col-b p{
+    text-align: center;
+}
+
+.btn-b{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-left: 130px;
+}
+
+.btn-b:hover{
+    border: 1px solid whitesmoke;
+    background: rgb(42, 81, 253);
+    transition: 1s;
+}
+
+.select-col-c img{
+    width: 50%;
+    height: 300px;
+    border-radius: 35px;
+    margin-left: 670px;
+    margin-top: -250px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------trip template------------------------------------------------
+------------------------------------------------------------------------------------------------------------*/
+.template-col img{
+    width: 70%;
+    height: 300px;
+    border-radius: 200px;
+    margin-left: -20px;
+    margin-top: 130px;
+}
+
+.template-col-a img{
+    width: 23%;
+    height: 300px;
+    border-radius: 200px;
+    margin-left: 300px;
+    margin-top: 150px;
+}
+
+
+.template-h h1{
+    font-size: 70px;
+    text-align: left;
+    color: white;
+    margin-top: -630px;
+    margin-left: 600px;
+}
+
+.template{
+    height: 40vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(88, 53, 0, 0.5), rgba(88, 53, 0, 0.5)), url(https://media.istockphoto.com/id/1311253634/photo/packing-suitcase-for-travel-vacation-in-new-normal-top-view.jpg?s=612x612&w=0&k=20&c=Cfh8R5fL8Qo467DesZuHOOOHroDZAsR6VfvTellV4p8=);
+    background-size: cover;
+    text-align: center;
+    color: white;
+    margin-top: 0
+}
+
+.fill-col{
+    margin-top: 40px;
+    margin-left: 70px;
+    margin-bottom: 60px;
+}
+
+.fill-col input{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 100px;
+}
+
+.dropdown{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+.fill-col h3{
+    font-size: 33px;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.fill-col{
+    margin-top: 50px;
+    margin-left: 650px;
+    margin-bottom: 80px;
+}
+
+
+.btn-t button{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-left: 130px;
+    margin-bottom: 50px;
+}
+
+.btn-b button:hover{
+    border: 1px solid whitesmoke;
+    background: rgb(42, 81, 253);
+    transition: 1s;
+}
+
+
+
+
+
+
+
+/*-----------------------------------------------------goa package-----------------------------------------------*/
+.goa-header{
+    margin-top: 30px;
+    height: 15vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(236, 235, 234, 0.349), rgba(236, 235, 234, 0.349)), url(https://img.lovepik.com/background/20211022/small/lovepik-sky-clouds-background-image_401746897.jpg);
+    background-size: cover;
+    text-align: center;
+    color: black;
+}
+
+.goa-h1 h1{
+    font-size: 80px;
+    text-align: center;
+    margin-top: -50px;
+}
+
+.goa-box-a img{
+    width: 90%;
+    height: 200px;
+    border-radius: 30px;
+    margin-left: 100px;
+}
+
+.goa-box-b img{
+    width: 85%;
+    height: 200px;
+    border-radius: 30px;
+    margin-left: -30px;
+}
+
+.goa-box-c img{
+    width: 90%;
+    height: 200px;
+    border-radius: 30px;
+    margin-left: 100px;
+}
+
+.goa-box-d img{
+    width: 85%;
+    height: 200px;
+    border-radius: 30px;
+    margin-left: -30px;
+}
+
+.goa-box-a h3{
+    font-size: 35px;
+    margin-left: 250px;
+}
+
+.goa-box-b h3{
+    font-size: 35px;
+    margin-left: 130px;
+}
+
+.goa-box-c h3{
+    font-size: 35px;
+    margin-left: 250px;
+}
+
+.goa-box-d h3{
+    font-size: 35px;
+    margin-left: 130px;
+}
+
+.goa-box-a p{
+    text-align: center;
+    margin-left: 130px;
+}
+
+.goa-box-b p{
+    text-align: center;
+    margin-right: 150px;
+}
+
+.goa-box-c p{
+    text-align: center;
+    margin-left: 130px;
+}
+
+.goa-box-d p{
+    text-align: center;
+    margin-right: 150px;
+}
+
+.goa-box-a a{
+    margin-left: 220px;
+}
+
+.goa-box-b a{
+    margin-left: 100px;
+}
+
+.goa-box-c a{
+    margin-left: 220px;
+}
+
+.goa-box-d a{
+    margin-left: 100px;
+    margin-bottom: 50px;
+}
+
+
+/*-----------------------------------------goa package 2N/3D-----------------------------------------------*/
+.goa2n3d-header{
+    margin-top: 30px;
+    height: 15vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(236, 235, 234, 0.349), rgba(236, 235, 234, 0.349)), url(https://merriam-webster.com/assets/mw/images/article/art-wap-landing-mp-lg/gray-background-7131-96d780fd18d4eaf58a7331d45573204e@1x.jpg);
+    background-size: cover;
+    text-align: center;
+    color: black;
+}
+
+.goa2n3d-h1 h1{
+    font-size: 80px;
+    text-align: center;
+    margin-top: -100px;
+}
+
+
+
+
+
+
+/*-------------------------------------goa------------------------------------------------*/
+.Goa-heading-header{
+    height: 20vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(151, 148, 144, 0.5), rgba(88, 53, 0, 0.5)), url(https://img.lovepik.com/background/20211022/small/lovepik-sky-clouds-background-image_401746897.jpg);
+    background-size: cover;
+    text-align: center;
+    color: rgb(0, 0, 0); 
+    margin-bottom: 50px;  
+}
+
+.Goa-heading-header h1{
+    font-size: 90px;
+    margin: 0;
+}
+
+.Goa-form-a input{
+    width: 30%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.Goa-form-a select{
+    width: 30%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.Goa-form-a label{
+    margin-left: 320px;
+    font-size: 20px;
+}
+
+.Goa-form-b input{
+    width: 30%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.Goa-form-b select{
+    width: 30%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.Goa-form-b label{
+    margin-left: 320px;
+    font-size: 20px;
+}
+
+.attraction-form h3{
+    text-align: center;
+    background-image: linear-gradient(rgba(151, 148, 144, 0.5), rgba(88, 53, 0, 0.5));
+    font-size: 30px;
+}
+
+.attraction-form{
+    margin-bottom: 50px;
+}
+
+.activity-form h3{
+    text-align: center;
+    background-image: linear-gradient(rgba(151, 148, 144, 0.5), rgba(88, 53, 0, 0.5));
+    font-size: 30px;
+}
+
+.activity-form{
+    margin-bottom: 50px;
+}
+
+.g-heading h3{
+    text-align: center;
+    background-image: linear-gradient(rgba(151, 148, 144, 0.5), rgba(88, 53, 0, 0.5));
+    font-size: 30px;
+    margin-bottom: 50px;
+
+}
+
+.Goa-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-left: 590px;
+    margin-bottom: 50px;
+}
+
+.Goa-btn:hover{
+    border: 1px solid whitesmoke;
+    background: rgb(42, 81, 253);
+    transition: 1s;
+}
+
+
+
+
+
+
+.ladakh-heading-header{
+    height: 35vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(151, 148, 144, 0.5), rgba(88, 53, 0, 0.5)), url(https://img.lovepik.com/background/20211022/small/lovepik-sky-clouds-background-image_401746897.jpg);
+    background-size: cover;
+    text-align: center;
+    color: rgb(0, 0, 0); 
+    margin-bottom: 50px;  
+}
+
+.ladakh-heading-header h1{
+    font-size: 90px;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------kerela package-----------------------------------------------*/
+.kerela-header{
+    margin-top: 30px;
+    height: 15vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(236, 235, 234, 0.349), rgba(236, 235, 234, 0.349)), url(https://img.lovepik.com/background/20211022/small/lovepik-sky-clouds-background-image_401746897.jpg);
+    background-size: cover;
+    text-align: center;
+    color: black;
+}
+
+.kerela-header-a{
+    margin-top: 30px;
+    height: 15vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(236, 235, 234, 0.349), rgba(236, 235, 234, 0.349)), url(https://img.lovepik.com/background/20211022/small/lovepik-sky-clouds-background-image_401746897.jpg);
+    background-size: cover;
+    text-align: center;
+    color: black;
+    margin-top: -45px;
+}
+
+.kerela-h1 h1{
+    font-size: 80px;
+    text-align: center;
+    margin-top: -50px;
+}
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------eventtemplate--------------------------------------------------
+---------------------------------------------------------------------------------------------------------------*/
+.header-e{
+    background-image: linear-gradient(rgba(88, 53, 0, 0.5), rgba(88, 53, 0, 0.5)), url(https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/8/2017/01/10140928/Event-Lighting-Guide.jpg);
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+}
+
+.header-ee h1{
+    font-size: 75px;
+    text-align: center;
+    color: white;
+    margin-top: -190px;
+}
+
+.engagement-col img{
+    width: 40%;
+    border-radius: 100px;
+    margin-top: 70px;
+    margin-left: 70px;
+}
+
+.engagement-col-a{
+    margin-top: -310px;
+    margin-left: 600px;
+}
+
+.engagement-col-a h2{
+    text-align: center;
+    font-size: 45px;
+}
+
+.engagement-col-a p{
+    text-align: center;
+    font-size: 20px;
+}
+
+.btn-ea{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-left: 280px;
+}
+
+.btn-ea:hover{
+    border: 1px solid whitesmoke;
+    background: rgb(42, 81, 253);
+    transition: 1s;
+} 
+
+
+.wedding-col img{
+    width: 51%;
+    border-radius: 100px;
+    margin-left: 70px;
+}
+
+.wedding-col-b{
+    margin-top: -340px;
+    margin-left: 600px;
+}
+
+.wedding-col-b h2{
+    text-align: center;
+    font-size: 45px;
+}
+
+.wedding-col-b p{
+    text-align: center;
+    font-size: 20px;
+}
+
+.btn-eb{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-left: 280px;
+}
+
+.btn-eb:hover{
+    border: 1px solid whitesmoke;
+    background: rgb(42, 81, 253);
+    transition: 1s;
+} 
+
+.birthday-col img{
+    width: 65%;
+    border-radius: 100px;
+    margin-left: 70px;
+}
+
+.birthday-col-c{
+    margin-top: -340px;
+    margin-left: 600px;
+}
+
+.birthday-col-c h2{
+    text-align: center;
+    font-size: 45px;
+}
+
+.birthday-col-c p{
+    text-align: center;
+    font-size: 20px;
+}
+
+.btn-ec{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-left: 280px;
+}
+
+.btn-ec:hover{
+    border: 1px solid whitesmoke;
+    background: rgb(42, 81, 253);
+    transition: 1s;
+} 
+
+.gettogether-col img{
+    width: 78%;
+    height: 340px;
+    border-radius: 100px;
+    margin-left: 70px;
+}
+
+.gettogether-col-d{
+    margin-top: -340px;
+    margin-left: 600px;
+}
+
+.gettogether-col-d h2{
+    text-align: center;
+    font-size: 45px;
+}
+
+.gettogether-col-d p{
+    text-align: center;
+    font-size: 20px;
+}
+
+.btn-ed{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-left: 280px;
+}
+
+.btn-ed:hover{
+    border: 1px solid whitesmoke;
+    background: rgb(42, 81, 253);
+    transition: 1s;
+} 
+
+
+
+
+
+
+
+/*----------------------------------------------engagement--------------------------------------------------*/
+.eng-heading-header{
+    height: 20vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(88, 53, 0, 0.5), rgba(88, 53, 0, 0.5)), url(https://www.lux-review.com/wp-content/uploads/2018/10/wedding-ring-2.jpg);
+    background-size: cover;
+    text-align: center;
+    color: white; 
+    margin-bottom: 50px;  
+}
+
+.eng-heading-header h1{
+    font-size: 90px;
+    margin: 0;
+}
+
+.eng-form h3{
+    text-align: center;
+    background-image: linear-gradient(rgba(88, 53, 0, 0.5), rgba(88, 53, 0, 0.5));
+    font-size: 30px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.eng-form-a input{
+    width: 30%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.eng-form-a label{
+    margin-left: 320px;
+    font-size: 20px;
+}
+
+.eng-form-b{
+    margin-left: 70px;
+}
+
+.eng-form-b input{
+    width: 10%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.eng-form-c input{
+    width: 30%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.eng-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-left: 590px;
+}
+
+.eng-btn:hover{
+    border: 1px solid whitesmoke;
+    background: rgb(42, 81, 253);
+    transition: 1s;
+}
+
+
+/*------------------------------------------wedding-------------------------------------------*/
+.wed-heading-header{
+    height: 20vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(88, 53, 0, 0.5), rgba(88, 53, 0, 0.5)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqDbbx14DJJc0w68gIfKNKHhroFcEOz03Cl4EMrZl9wfxufSNO8wB7L2zEFvOUMKx1o1k&usqp=CAU);
+    background-size: cover;
+    text-align: center;
+    color: white; 
+    margin-bottom: 50px;  
+}
+
+.wed-heading-header h1{
+    font-size: 90px;
+    margin: 0;
+}
+
+.wed-form h3{
+    text-align: center;
+    background-image: linear-gradient(rgba(88, 53, 0, 0.5), rgba(88, 53, 0, 0.5));
+    font-size: 30px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.wed-form-a input{
+    width: 30%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.wed-form-a label{
+    margin-left: 320px;
+    font-size: 20px;
+}
+
+.wed-form-b{
+    margin-left: 300px;
+}
+
+.wed-form-b input{
+    width: 50%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.wed-form-b label{
+    font-size: 20px;
+}
+
+.wed-form-c{
+    margin-left: 50px;
+}
+
+.wed-form-c input{
+    width: 10%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.wed-form-d input{
+        width: 30%;
+        padding: 15px;
+        margin-bottom: 17px;
+        outline: none;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-left: 50px;
+}
+
+.eng-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-left: 590px;
+}
+
+.eng-btn:hover{
+    border: 1px solid whitesmoke;
+    background: rgb(42, 81, 253);
+    transition: 1s;
+}
+
+
+
+
+
+
+
+/*----------------------------------------------birthday--------------------------------------------------*/
+.birth-heading-header{
+    height: 20vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(88, 53, 0, 0.5), rgba(88, 53, 0, 0.5)), url(https://www.lux-review.com/wp-content/uploads/2018/10/wedding-ring-2.jpg);
+    background-size: cover;
+    text-align: center;
+    color: white; 
+    margin-bottom: 50px;  
+}
+
+.birth-heading-header h1{
+    font-size: 90px;
+    margin: 0;
+}
+
+.birth-form h3{
+    text-align: center;
+    background-image: linear-gradient(rgba(88, 53, 0, 0.5), rgba(88, 53, 0, 0.5));
+    font-size: 30px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.birth-form-a input{
+    width: 30%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.birth-form-a label{
+    margin-left: 320px;
+    font-size: 20px;
+}
+
+.birth-form-b{
+    margin-left: 70px;
+}
+
+.birth-form-b input{
+    width: 10%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.birth-form-c input{
+    width: 30%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.birth-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-left: 590px;
+}
+
+.birth-btn:hover{
+    border: 1px solid whitesmoke;
+    background: rgb(42, 81, 253);
+    transition: 1s;
+}
+
+/*----------------------------------------------gettogther--------------------------------------------------*/
+.get-heading-header{
+    height: 20vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(88, 53, 0, 0.5), rgba(88, 53, 0, 0.5)), url(https://www.lux-review.com/wp-content/uploads/2018/10/wedding-ring-2.jpg);
+    background-size: cover;
+    text-align: center;
+    color: white; 
+    margin-bottom: 50px;  
+}
+
+.get-heading-header h1{
+    font-size: 90px;
+    margin: 0;
+}
+
+.get-form h3{
+    text-align: center;
+    background-image: linear-gradient(rgba(88, 53, 0, 0.5), rgba(88, 53, 0, 0.5));
+    font-size: 30px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.get-form-a input{
+    width: 30%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.get-form-a label{
+    margin-left: 320px;
+    font-size: 20px;
+}
+
+.get-form-b{
+    margin-left: 70px;
+}
+
+.get-form-b input{
+    width: 10%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.get-form-c input{
+    width: 30%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+.get-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-left: 590px;
+}
+
+.get-btn:hover{
+    border: 1px solid whitesmoke;
+    background: rgb(42, 81, 253);
+    transition: 1s;
+}
